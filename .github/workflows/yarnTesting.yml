@@ -7,7 +7,7 @@ env:
 jobs:
   Job_1:
     name: Agent job 1
-    runs-on: linux
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: Run yarn 
