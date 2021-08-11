@@ -1,5 +1,7 @@
 name: YarnTesting
 on:
+  push:
+    branches: [ master ]
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ master ]
@@ -11,5 +13,5 @@ jobs:
     runs-on: linux
     steps:
     - uses: actions/checkout@v2
-    - name: Run yarn
+    - name: Run yarn task
       run: yarn
