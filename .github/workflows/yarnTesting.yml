@@ -11,5 +11,5 @@ jobs:
     runs-on: linux
     steps:
     - uses: actions/checkout@v2
-    - name: Run yarn
+    - name: Run yarn task
       run: yarn
