@@ -1,0 +1,15 @@
+name: YarnTesting
+on:
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ master ]
+env:
+  SYSTEM.DEBUG: 'false'
+jobs:
+  Job_1:
+    name: Agent job 1
+    runs-on: linux
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run yarn
+      run: yarn
