@@ -20,3 +20,4 @@ jobs:
         \n//pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:email=npm requires email to be set but doesn't use the value
         \n; end auth token"
         > "$HOME/.npmrc"
+        yarn --verbose
