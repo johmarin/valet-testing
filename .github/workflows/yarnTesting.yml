@@ -11,4 +11,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run yarn 
-      run: npm install
+      run: yarn --verbose
