@@ -11,7 +11,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: npm set
-      run: yarn config set 'npmRegistries["https://pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/"]' "${{ secrets.NPMTESTFEED1_PAT }}";
+      run: 
+        yarn config set 'npmRegistries["https://pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/"]' "${{ secrets.NPMTESTFEED1_PAT }}";
+        yarn config set 'npmRegistries["https://pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/"]' "${{ secrets.NPMTESTFEED1_PAT }}";
     - name: Run yarn 
       run: 
         yarn --verbose
