@@ -14,6 +14,15 @@ jobs:
       run: 
         yarn config set 'npmRegistries["https://pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/"]' "${{ secrets.NPMTESTFEED1_PAT }}";
         yarn config set 'npmRegistries["https://pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/"]' "${{ secrets.NPMTESTFEED1_PAT }}";
+        printf ";begin auth token ...
+        \n//pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/:username=johmarin
+        \n//pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/:_password=${{ secrets.NPMTESTFEED1_PAT }}
+        \n//pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/:email=npm requires email to be set but doesn't use the value
+        \n//pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:username=johmarin
+        \n//pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:_password=${{ secrets.NPMTESTFEED1_PAT }}
+        \n//pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:email=npm requires email to be set but doesn't use the value
+        \n; end auth token"
+        > "$HOME/.npmrc";
     - name: Run yarn 
       run: 
         yarn --verbose
