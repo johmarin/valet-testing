@@ -12,12 +12,12 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run yarn 
       run: printf ";begin auth token ...
-        \n//pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/:username=johmarin
-        \n//pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/:_password=${{ secrets.NPMTESTFEED1_PAT }}
-        \n//pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/:email=npm requires email to be set but doesn't use the value
-        \n//pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:username=johmarin
-        \n//pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:_password=${{ secrets.NPMTESTFEED1_PAT }}
-        \n//pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:email=npm requires email to be set but doesn't use the value
+        \n//pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/41812c09-b173-4c75-9316-f3fa95be549e/npm/registry/:username=johmarin
+        \n//pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/41812c09-b173-4c75-9316-f3fa95be549e/npm/registry/:_password=${{ secrets.NPMTESTFEED1_PAT }}
+        \n//pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/41812c09-b173-4c75-9316-f3fa95be549e/npm/registry/:email=npm requires email to be set but doesn't use the value
+        \n//pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/41812c09-b173-4c75-9316-f3fa95be549e/npm/:username=johmarin
+        \n//pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/41812c09-b173-4c75-9316-f3fa95be549e/npm/:_password=${{ secrets.NPMTESTFEED1_PAT }}
+        \n//pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/41812c09-b173-4c75-9316-f3fa95be549e/npm/:email=npm requires email to be set but doesn't use the value
         \n; end auth token"
         > "$HOME/.npmrc";
         echo foo;
