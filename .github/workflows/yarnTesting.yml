@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: npm set
+      run: npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:_authToken ${{ secrets.NPMTESTFEED1_PAT }};
     - name: Run yarn 
       run: 
-        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/:_authToken ${{ secrets.NPMTESTFEED1_PAT }};
-        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:_authToken ${{ secrets.NPMTESTFEED1_PAT }};
         yarn --verbose
