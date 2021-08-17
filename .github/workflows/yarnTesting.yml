@@ -12,12 +12,12 @@ jobs:
     - uses: actions/checkout@v2
     - name: npm set
       run: 
-        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/:username=johmarin
-        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/:_password=${{ secrets.NPMTESTFEED1_PAT }}
-        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/:email=npm requires email to be set but doesn't use the value
-        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:username=johmarin
-        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:_password=${{ secrets.NPMTESTFEED1_PAT }}
-        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:email=npm requires email to be set but doesn't use the value
+        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/:username=johmarin;
+        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/:_password=${{ secrets.NPMTESTFEED1_PAT }};
+        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/:email=email
+        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:username=johmarin;
+        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:_password=${{ secrets.NPMTESTFEED1_PAT }};
+        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:email=email;
     - name: Run yarn 
       run: 
         yarn --verbose
