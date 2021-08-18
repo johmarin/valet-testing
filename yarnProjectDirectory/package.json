@@ -1,0 +1,7 @@
+{
+  "name": "yarn-test-package",
+  "version": "1.0.0",
+  "dependencies": {
+  },
+  "license": "BSD-2-Clause"
+}
