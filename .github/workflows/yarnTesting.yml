@@ -18,4 +18,4 @@ jobs:
         npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:username=johmarin
         npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:_password=${{ secrets.NPMTESTFEED1_PAT }}
         npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:email=email
-        yarn --verbose
+        yarn --verbose --cwd yarnPackageDirectory
