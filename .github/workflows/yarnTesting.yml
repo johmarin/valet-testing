@@ -11,11 +11,21 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Yarn
-      run: |2-
-        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/:username=johmarin
-        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/:_password=${{ secrets.NPMTESTFEED1_PAT }}
+      run: |-
+        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/:username=user
+        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/:_password=${{ NPM_PASSWORD_1 }}
         npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/:email=email
-        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:username=johmarin
-        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:_password=${{ secrets.NPMTESTFEED1_PAT }}
+        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:username=user
+        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:_password=${{ NPM_PASSWORD_1 }}
         npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:email=email
-        yarn --verbose --cwd yarnProjectDirectory
+        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/:username=user
+        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/:_password=${{ NPM_PASSWORD_2 }}
+        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/:email=email
+        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:username=user
+        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:_password=${{ NPM_PASSWORD_2 }}
+        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:email=email
+        yarn --cwd yarnProjectDirectory --verbose
+      env:
+        NPM_PASSWORD_1: "$ {{ secrets.NPMTESTFEED1_PAT }}"
+        NPM_PASSWORD_2: "$ {{ secrets.NPMTESTFEED1_PAT }}"
+
