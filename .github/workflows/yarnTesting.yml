@@ -11,4 +11,4 @@ jobs:
     - name: checkout
       uses: actions/checkout@v2
     - name: Yarn
-      run: yarn --cwd yarnProjectDirectory
+      run: yarn --cwd yarnProjectDirectory --verbose --production
