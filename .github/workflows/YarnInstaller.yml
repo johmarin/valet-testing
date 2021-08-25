@@ -12,5 +12,4 @@ jobs:
       run: npm install -g yarn@1.14.*
     - name: YarnInstaller 15
       run: |-
-        yarn set version 1.14.*
         yarn version
