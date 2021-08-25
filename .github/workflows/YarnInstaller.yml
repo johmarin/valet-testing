@@ -5,8 +5,12 @@ on:
 env:
   SYSTEM.DEBUG: 'false'
 jobs:
-  serverjob:
-    runs-on: ubuntu-latest
+  Job_1:
+    name: Agent job 1
+    runs-on: windows-latest
     steps:
-    - name: YarnInstaller
-      run: npm install -g yarn@"<1.21.*"
+    - uses: actions/checkout@v2
+    - name: Use Yarn 1.22.x
+      run: npm install yarn@"1.22.x"
+    - name: Use Yarn with default value
+      run: npm install yarn@"1.x"
