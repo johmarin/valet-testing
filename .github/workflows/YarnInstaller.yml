@@ -8,8 +8,8 @@ jobs:
   serverjob:
     runs-on: ubuntu-latest
     steps:
-    - name: YarnInstaller 16
-      run: npm install -g yarn@1.14.*
-    - name: YarnInstaller 15
+    - name: YarnInstaller
+      run: npm install -g yarn@1.9.1
+    - name: YarnVersion
       run: |-
         yarn version
