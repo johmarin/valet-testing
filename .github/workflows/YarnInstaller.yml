@@ -10,4 +10,4 @@ jobs:
     steps:
     - name: YarnInstaller
       run: |-
-        yarn policies set-version 1.20.0
+        yarn policies set-version 1.20.0 --rc
