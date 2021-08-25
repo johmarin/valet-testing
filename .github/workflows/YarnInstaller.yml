@@ -8,6 +8,13 @@ jobs:
   serverjob:
     runs-on: ubuntu-latest
     steps:
-    - name: YarnInstaller
-      run: |-
-        yarn set version 1.9.*
+    - name: YarnInstaller 13
+      run: yarn set version 1.13.*
+    - name: YarnInstaller 14
+      run: yarn set version 1.14.*
+    - name: YarnInstaller 15
+      run: yarn set version 1.15.*
+    - name: YarnInstaller 16
+      run: yarn set version 1.16.*
+    - name: YarnInstaller 17
+      run: yarn set version 1.17.*
