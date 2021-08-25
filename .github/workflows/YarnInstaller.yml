@@ -8,8 +8,6 @@ jobs:
   serverjob:
     runs-on: windows-latest
     steps:
-    - name: checkout
-      uses: actions/checkout@v2
     - name: YarnInstaller
       run: |-
-        yarn set version 1.20.0 berry
+        yarn policies set-version 1.13.0
