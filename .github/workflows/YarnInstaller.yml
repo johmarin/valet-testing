@@ -6,8 +6,8 @@ env:
   SYSTEM.DEBUG: 'false'
 jobs:
   serverjob:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - name: YarnInstaller
       run: |-
-        yarn set version 1.12.*
+        yarn set version 1.11.*
