@@ -10,4 +10,5 @@ jobs:
     steps:
     - name: YarnInstaller
       run: |-
-        npm install yarn@1.22.11
+        npm install yarn@1.22.10
+        yarn version
