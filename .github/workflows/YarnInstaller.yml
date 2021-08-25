@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: YarnInstaller
-      run: npm install -g yarn@1.9.1
+      run: npm install -g yarn@1
     - name: YarnVersion
       run: |-
         yarn version
