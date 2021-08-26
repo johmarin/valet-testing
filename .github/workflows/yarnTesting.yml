@@ -12,12 +12,6 @@ jobs:
       uses: actions/checkout@v2
     - name: Yarn
       run: |-
-        npm set //pkgs.dev.azure.com/${{ env.FEED_ORGANIZATION_NAME }}/${{ env.FEED_PROJECT_ID }}/_packaging/${{ env.FEED_PACKAGE_NAME }}/npm/registry/:username=user
-        npm set //pkgs.dev.azure.com/${{ env.FEED_ORGANIZATION_NAME }}/${{ env.FEED_PROJECT_ID }}/_packaging/${{ env.FEED_PACKAGE_NAME }}/npm/registry/:_password=${{ env.NPM_PASSWORD }}
-        npm set //pkgs.dev.azure.com/${{ env.FEED_ORGANIZATION_NAME }}/${{ env.FEED_PROJECT_ID }}/_packaging/${{ env.FEED_PACKAGE_NAME }}/npm/registry/:email=email
-        npm set //pkgs.dev.azure.com/${{ env.FEED_ORGANIZATION_NAME }}/${{ env.FEED_PROJECT_ID }}/_packaging/${{ env.FEED_PACKAGE_NAME }}/npm/:username=user
-        npm set //pkgs.dev.azure.com/${{ env.FEED_ORGANIZATION_NAME }}/${{ env.FEED_PROJECT_ID }}/_packaging/${{ env.FEED_PACKAGE_NAME }}/npm/:_password=${{ env.NPM_PASSWORD }}
-        npm set //pkgs.dev.azure.com/${{ env.FEED_ORGANIZATION_NAME }}/${{ env.FEED_PROJECT_ID }}/_packaging/${{ env.FEED_PACKAGE_NAME }}/npm/:email=email
         yarn --cwd yarnProjectDirectory --verbose --production
       env:
         FEED_ORGANIZATION_NAME: johmarin
