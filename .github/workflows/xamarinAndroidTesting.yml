@@ -1,0 +1,15 @@
+name: XamarinAndroidTesting
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+env:
+  SYSTEM.DEBUG: 'false'
+jobs:
+  serverjob:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: XamarinAndroid
+      run: ${{ github.action_path }}/build-android.sh
+      shell: bash
