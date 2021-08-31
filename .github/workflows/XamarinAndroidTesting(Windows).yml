@@ -1,0 +1,24 @@
+name: XamarinAndroidTesting(Windows)
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+env:
+  SYSTEM.DEBUG: 'false'
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup .NET Core SDK 5.0.x
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '5.0.x'
+
+    - name: Install dependencies
+      run: nuget restore "XamarinAndroid/FingerPaint/FingerPaint.sln"
+
+    - name: Build
+      run: msbuild "XamarinAndroid/FingerPaint/FingerPaint/FingerPaint.csproj" /t:PackageForAndroid /p:Configuration=Debug
