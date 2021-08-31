@@ -21,7 +21,7 @@ jobs:
         dotnet-version: '5.0.x'
 
     - name: Install dependencies
-      run: nuget restore "valet-testing/XamarinAndroid/FingerPaint/"
+      run: nuget restore "valet-testing/XamarinAndroid/FingerPaint/FingerPaint.sln"
 
     - name: Build
-      run: msbuild "valet-testing/XamarinAndroid/FingerPaint/FingerPaint/" /t:PackageForAndroid /p:Configuration=Debug
+      run: msbuild "valet-testing/XamarinAndroid/FingerPaint/FingerPaint/FingerPaint.csproj" /t:PackageForAndroid /p:Configuration=Debug
