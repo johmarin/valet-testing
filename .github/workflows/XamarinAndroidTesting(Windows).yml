@@ -15,7 +15,7 @@ jobs:
     - name: Install Mono
       run: |- 
         dotnet tool install --global boots
-        boots --stable Mono
+        boots --stable XamarinAndroid
         
     - name: Setup .NET Core SDK 5.0.x
       uses: actions/setup-dotnet@v1
