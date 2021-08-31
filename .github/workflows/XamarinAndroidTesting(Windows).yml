@@ -13,8 +13,10 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: Install Mono
-      run: boots --stable Mono
-    
+      run: |- 
+        dotnet tool install --global boots
+        boots --stable Mono
+        
     - name: Setup .NET Core SDK 5.0.x
       uses: actions/setup-dotnet@v1
       with:
