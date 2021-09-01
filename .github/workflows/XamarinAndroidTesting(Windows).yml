@@ -12,9 +12,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Install Mono
-      run: |- 
-        $VM_ASSETS/select-xamarin-sdk-v2.sh
+    - name: Uses MsBuild
+      uses: microsoft/setupmsbuild@1.0.0
         
     - name: Setup .NET Core SDK 5.0.x
       uses: actions/setup-dotnet@v1
