@@ -5,22 +5,22 @@ on:
 env:
   SYSTEM.DEBUG: 'false'
 jobs:
-  serverjob:
-    runs-on: ubuntu-latest
+  Job_1:
+    name: Agent job 1
+    runs-on: windows-latest
     steps:
-    - name: checkout
-      uses: actions/checkout@v2
-    - name: Yarn
+    - uses: actions/checkout@v2
+    - name: Use Yarn 1.22.x
+      run: npm install yarn@"1.22.x"
+    - name: Yarn Registry Authentication
       run: |-
-        npm set //pkgs.dev.azure.com/${{ env.FEED_ORGANIZATION_NAME }}/${{ env.FEED_PROJECT_ID }}/_packaging/${{ env.FEED_PACKAGE_NAME }}/npm/registry/:username=user
-        npm set //pkgs.dev.azure.com/${{ env.FEED_ORGANIZATION_NAME }}/${{ env.FEED_PROJECT_ID }}/_packaging/${{ env.FEED_PACKAGE_NAME }}/npm/registry/:_password=${{ env.NPM_PASSWORD }}
-        npm set //pkgs.dev.azure.com/${{ env.FEED_ORGANIZATION_NAME }}/${{ env.FEED_PROJECT_ID }}/_packaging/${{ env.FEED_PACKAGE_NAME }}/npm/registry/:email=email
-        npm set //pkgs.dev.azure.com/${{ env.FEED_ORGANIZATION_NAME }}/${{ env.FEED_PROJECT_ID }}/_packaging/${{ env.FEED_PACKAGE_NAME }}/npm/:username=user
-        npm set //pkgs.dev.azure.com/${{ env.FEED_ORGANIZATION_NAME }}/${{ env.FEED_PROJECT_ID }}/_packaging/${{ env.FEED_PACKAGE_NAME }}/npm/:_password=${{ env.NPM_PASSWORD }}
-        npm set //pkgs.dev.azure.com/${{ env.FEED_ORGANIZATION_NAME }}/${{ env.FEED_PROJECT_ID }}/_packaging/${{ env.FEED_PACKAGE_NAME }}/npm/:email=email
-        yarn --cwd yarnProjectDirectory --verbose --production
+        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/:username=user
+        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/:_password=${{ env.NPM_PASSWORD_1 }}
+        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/registry/:email=email
+        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:username=user
+        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:_password=${{ env.NPM_PASSWORD_1 }}
+        npm set //pkgs.dev.azure.com/johmarin/b8123011-3f85-49c9-af12-4deb3053c510/_packaging/NpmTestFeed1/npm/:email=email
       env:
-        FEED_ORGANIZATION_NAME: johmarin
-        FEED_PROJECT_ID: b8123011-3f85-49c9-af12-4deb3053c510
-        FEED_PACKAGE_NAME: NpmTestFeed1
-        NPM_PASSWORD: "${{ secrets.NPMTESTFEED1_PAT }}"
+        NPM_PASSWORD_1: "${{ secrets.NPMTESTFEED1_PAT }}"
+    - name: Yarn
+      run: yarn --cwd yarnProjectDirectory --verbose
