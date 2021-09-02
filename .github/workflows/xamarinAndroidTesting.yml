@@ -12,6 +12,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
+    - name: Print runner OS
+      run: echo ${{ env.RUNNER_OS }}
+      
     - name: Set default Xamarin SDK versions
       if: env.RUNNER_OS == 'macOS'
       run: $VM_ASSETS/select-xamarin-sdk-v2.sh --mono=6.10 --android=10.2
