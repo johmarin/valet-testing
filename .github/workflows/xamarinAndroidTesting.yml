@@ -20,7 +20,7 @@ jobs:
       run: $VM_ASSETS/select-xamarin-sdk-v2.sh --mono=6.10 --android=10.2
 
     - name: Uses MsBuild
-      if: env.RUNNER_OS == 'windows'
+      if: env.RUNNER_OS == ''
       uses: microsoft/setup-msbuild@v1.0.3
       
     - name: Setup .NET Core SDK 5.0.x
