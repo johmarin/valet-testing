@@ -10,9 +10,9 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Use Yarn 1.22.x
-      uses: azure/powershell@1
+    - name: Run PowerShell
+      uses: azure/powershell@v1
       with:
         inlineScript: |
-          echo "HelloWorld
+          echo "HelloWorld"
         azPSVersion: 'latest'
