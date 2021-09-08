@@ -16,13 +16,13 @@ jobs:
       run: |- 
         echo "Runner OS - $ENV:RUNNER_OS"
         echo "Run Id - ENV:GITHUB_RUN_ID"
-
-    - name: Install dependencies
-      run: nuget restore "XamarinAndroid/FingerPaint/FingerPaint.sln"
       
     - name: Uses MsBuild
       if: $ENV.RUNNER_OS == 'Windows'
       uses: microsoft/setup-msbuild@v1.0.3
+      
+    - name: Install dependencies
+      run: nuget restore "XamarinAndroid/FingerPaint/FingerPaint.sln"
 
     - name: Build
       run: msbuild "XamarinAndroid/FingerPaint/FingerPaint/FingerPaint.csproj" /t:PackageForAndroid /p:Configuration=Debug
