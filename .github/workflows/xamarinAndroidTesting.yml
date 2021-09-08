@@ -26,6 +26,7 @@ jobs:
       uses: microsoft/setup-msbuild@v1.0.3
       
     - name: Setup .NET Core SDK 5.0.x
+      if: env.RUNNER_OS == 'foo'
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '5.0.x'
