@@ -17,6 +17,10 @@ jobs:
 
     - name: Install dependencies
       run: nuget restore "XamarinAndroid/FingerPaint/FingerPaint.sln"
+      
+    - name: Uses MsBuild
+      if: env.RUNNER_OS == ''
+      uses: microsoft/setup-msbuild@v1.0.3
 
     - name: Build
       run: msbuild "XamarinAndroid/FingerPaint/FingerPaint/FingerPaint.csproj" /t:PackageForAndroid /p:Configuration=Debug
