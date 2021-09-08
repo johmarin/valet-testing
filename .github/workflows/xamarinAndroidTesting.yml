@@ -12,8 +12,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Print runner OS
-      run: echo "Runner OS - $RUNNER_OS"
+    - name: Print env values
+      run: |- 
+        echo "Runner OS - $RUNNER_OS"
+        echo "Run Id - $GITHUB_RUN_ID"
 
     - name: Install dependencies
       run: nuget restore "XamarinAndroid/FingerPaint/FingerPaint.sln"
