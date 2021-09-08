@@ -14,8 +14,8 @@ jobs:
     
     - name: Print env values
       run: |- 
-        echo "Runner OS - $RUNNER_OS"
-        echo "Run Id - $GITHUB_RUN_ID"
+        echo "Runner OS - $ENV:RUNNER_OS"
+        echo "Run Id - ENV:GITHUB_RUN_ID"
 
     - name: Install dependencies
       run: nuget restore "XamarinAndroid/FingerPaint/FingerPaint.sln"
