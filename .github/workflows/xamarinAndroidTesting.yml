@@ -7,7 +7,7 @@ env:
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: macos-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -15,7 +15,7 @@ jobs:
     - name: Print env values
       run: |- 
         echo "Runner OS - $ENV:RUNNER_OS"
-        echo "Run Id - ENV:GITHUB_RUN_ID"
+        echo "Run Id - $ENV:GITHUB_RUN_ID"
       
     - name: Uses MsBuild
       if: ${{ RUNNER.OS == 'Windows' }}
