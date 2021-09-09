@@ -27,4 +27,4 @@ jobs:
       run: nuget restore "XamarinAndroid/FingerPaint/FingerPaint.sln"
 
     - name: Build
-      run: msbuild "XamarinAndroid/FingerPaint/FingerPaint/FingerPaint.csproj" /t:PackageForAndroid /p:Configuration=Debug /p:Platform=x64
+      run: msbuild "XamarinAndroid/FingerPaint/FingerPaint/FingerPaint.csproj" /t:PackageForAndroid /p:Configuration=Debug /p:Platform=x86
