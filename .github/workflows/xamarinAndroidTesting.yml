@@ -20,6 +20,8 @@ jobs:
     - name: Uses MsBuild
       if: ${{ RUNNER.OS == 'Windows' }}
       uses: microsoft/setup-msbuild@v1.0.3
+      with:
+        vs-version: 'latest'
       
     - name: Install dependencies
       run: nuget restore "XamarinAndroid/FingerPaint/FingerPaint.sln"
