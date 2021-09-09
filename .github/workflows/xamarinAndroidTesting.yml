@@ -7,7 +7,7 @@ env:
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: macos-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -16,6 +16,12 @@ jobs:
       run: |- 
         echo "Runner OS - $ENV:RUNNER_OS"
         echo "Run Id - $ENV:GITHUB_RUN_ID"
+        
+    - name: Set default Xamarin SDK versions
+      if: env.RUNNER_OS == 'macOS'
+      run: |-
+        $VM_ASSETS/select-xamarin-sdk-v2.sh --mono=6.10 --android=10.2
+        type $VM_ASSETS/select-xamarin-sdk-v2.sh
       
     - name: Uses MsBuild
       if: ${{ RUNNER.OS == 'Windows' }}
@@ -27,4 +33,4 @@ jobs:
       run: nuget restore "XamarinAndroid/FingerPaint/FingerPaint.sln"
 
     - name: Build
-      run: msbuild "XamarinAndroid/FingerPaint/FingerPaint/FingerPaint.csproj" /t:PackageForAndroid /p:Configuration=Debug /p:Platform=x86
+      run: msbuild "XamarinAndroid/FingerPaint/FingerPaint/FingerPaint.csproj" /t:PackageForAndroid /p:Configuration=Debug
