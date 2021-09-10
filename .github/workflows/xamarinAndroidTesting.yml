@@ -23,7 +23,7 @@ jobs:
         $VM_ASSETS/select-xamarin-sdk-v2.sh --mono=6.4 --android=10.2
         cat $VM_ASSETS/select-xamarin-sdk-v2.sh
         echo 'Library'; ls '/Library'
-        echo 'Library/Java...'; ls 'Library/Java/'
+        echo 'Library/Java...'; ls '/Library/Java/'
         ls '/Library/Frameworks/'
         ls '/Library/Frameworks/Mono.framework/'
         ls '/Library/Frameworks/Mono.framework/Versions/'
