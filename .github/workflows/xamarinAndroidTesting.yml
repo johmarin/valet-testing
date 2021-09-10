@@ -25,6 +25,7 @@ jobs:
         ls '/Library/Frameworks/'
         ls '/Library/Frameworks/Mono.framework/'
         ls '/Library/Frameworks/Mono.framework/Versions/'
+        msbuild -ver
       
     - name: Uses MsBuild
       if: ${{ RUNNER.OS == 'Windows' }}
