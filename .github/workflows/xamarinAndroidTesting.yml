@@ -7,7 +7,7 @@ env:
 jobs:
   build:
 
-    runs-on: macos-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -41,7 +41,7 @@ jobs:
       with:
         distribution: 'temurin'
         java-version: '8'
-        architecture: x64
+        architecture: x86
 
     - name: Build
       run: msbuild "XamarinAndroid/FingerPaint/FingerPaint/FingerPaint.csproj" /t:PackageForAndroid /p:Configuration=Debug
