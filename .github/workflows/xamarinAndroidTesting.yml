@@ -21,7 +21,7 @@ jobs:
       if: RUNNER.OS == 'macOS'
       run: |-
         $VM_ASSETS/select-xamarin-sdk-v2.sh --mono=6.10 --android=10.2
-        type $VM_ASSETS/select-xamarin-sdk-v2.sh
+        cat $VM_ASSETS/select-xamarin-sdk-v2.sh
       
     - name: Uses MsBuild
       if: ${{ RUNNER.OS == 'Windows' }}
