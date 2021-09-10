@@ -22,6 +22,7 @@ jobs:
       run: |-
         $VM_ASSETS/select-xamarin-sdk-v2.sh --mono=6.10 --android=10.2
         cat $VM_ASSETS/select-xamarin-sdk-v2.sh
+        ls '/Library/Frameworks/'
       
     - name: Uses MsBuild
       if: ${{ RUNNER.OS == 'Windows' }}
