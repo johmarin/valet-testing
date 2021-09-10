@@ -35,4 +35,14 @@ jobs:
       with:
         vs-version: '15.0'
       
+    - name: Install dependencies
+      run: nuget restore "XamarinAndroid/FingerPaint/FingerPaint.sln"
+      
+    - uses: actions/setup-java@v2
+      with:
+        distribution: 'adopt'
+        java-version: '11'
+        architecture: x86 # optional - defaults to x64
 
+    - name: Build
+      run: msbuild "XamarinAndroid/FingerPaint/FingerPaint/FingerPaint.csproj" /t:PackageForAndroid /p:Configuration=Debug
