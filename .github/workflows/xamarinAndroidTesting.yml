@@ -24,9 +24,8 @@ jobs:
         cat $VM_ASSETS/select-xamarin-sdk-v2.sh
         echo 'Library'; ls '/Library'
         echo 'Library/Java...'; ls '/Library/Java/'
-        ls '/Library/Frameworks/'
-        ls '/Library/Frameworks/Mono.framework/'
-        ls '/Library/Frameworks/Mono.framework/Versions/'
+        echo 'Library/Frameworks...'; ls '/Library/Frameworks/'
+        echo 'Users/runner/hostedtoolcache/'; ls '/Users/runner/hostedtoolcache/'
         msbuild -ver
       
     - name: Uses MsBuild
