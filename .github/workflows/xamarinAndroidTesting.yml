@@ -42,7 +42,7 @@ jobs:
       with:
         distribution: 'zulu'
         java-version: '8'
-        architecture: x86
+        architecture: x64
 
     - name: Build
       run: msbuild "XamarinAndroid/FingerPaint/FingerPaint/FingerPaint.csproj" /t:PackageForAndroid /p:Configuration=Debug
