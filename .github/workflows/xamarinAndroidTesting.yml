@@ -30,7 +30,7 @@ jobs:
       
     - name: get dirs
       run: |-
-        echo $Env:JAVA_HOME
+        echo "${JAVA_HOME}"
         
     - name: Uses MsBuild
       if: ${{ RUNNER.OS == 'Windows' }}
@@ -48,4 +48,4 @@ jobs:
         architecture: x64
     - run: |- 
         echo $Env:JAVA_HOME
-        msbuild "XamarinAndroid/FingerPaint/FingerPaint/FingerPaint.csproj" /t:PackageForAndroid /p:Configuration=Debug /p:JavaSdkDirectory=$JAVA_HOME
+        msbuild "XamarinAndroid/FingerPaint/FingerPaint/FingerPaint.csproj" /t:PackageForAndroid /p:Configuration=Debug /p:JavaSdkDirectory=${JAVA_HOME}
