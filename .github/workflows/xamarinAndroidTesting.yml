@@ -30,7 +30,6 @@ jobs:
       
     - name: get dirs
       run: |-
-        ls $RUNNER_TOOL_CACHE\Java_Adopt_jdk
         echo $Env:JAVA_HOME
         
     - name: Uses MsBuild
