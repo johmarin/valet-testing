@@ -48,4 +48,4 @@ jobs:
         java-version: 1.7
 
     - name: Build
-      run: msbuild "XamarinAndroid/FingerPaint/FingerPaint/FingerPaint.csproj" /t:PackageForAndroid /p:Configuration=Debug
+      run: msbuild "XamarinAndroid/FingerPaint/FingerPaint/FingerPaint.csproj" /t:PackageForAndroid /p:Configuration=Debug /p:JavaSdkDirectory='C:\hostedtoolcache\windows\Java_Temurin-Hotspot_jdk\8.0.302-8\x86'
