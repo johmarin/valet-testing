@@ -30,7 +30,7 @@ jobs:
       
     - name: get dirs
       run: |-
-        ls 'C:\hostedtoolcache\windows\jdk\'
+        ls 'C:\Program Files\Android\jdk\'
         
     - name: Uses MsBuild
       if: ${{ RUNNER.OS == 'Windows' }}
