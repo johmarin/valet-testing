@@ -28,6 +28,10 @@ jobs:
         echo 'Users/runner/hostedtoolcache/'; ls '/Users/runner/hostedtoolcache/'
         msbuild -ver
       
+    - name: get dirs
+      run: |-
+        ls 'C:\hostedtoolcache\windows\jdk\'
+        
     - name: Uses MsBuild
       if: ${{ RUNNER.OS == 'Windows' }}
       uses: microsoft/setup-msbuild@v1.0.3
