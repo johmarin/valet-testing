@@ -52,6 +52,8 @@ jobs:
       run:
         echo "JAVA_PATH=$env:JAVA_HOME" >> $GITHUB_ENV
         
-    - run: |- 
+    - name: Run build
+      run: |- 
+        echo "${{ env.JAVA_PATH }}"
         echo $Env:JAVA_HOME
         msbuild "XamarinAndroid/FingerPaint/FingerPaint/FingerPaint.csproj" /t:PackageForAndroid /p:Configuration=Debug /p:JavaSdkDirectory="${{ env.JAVA_PATH }}"
