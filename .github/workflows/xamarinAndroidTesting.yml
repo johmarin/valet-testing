@@ -50,4 +50,4 @@ jobs:
         architecture: x86
     - run: |- 
         echo $Env:JAVA_HOME
-        msbuild "XamarinAndroid/FingerPaint/FingerPaint/FingerPaint.csproj" /t:PackageForAndroid /p:Configuration=Debug
+        msbuild "XamarinAndroid/FingerPaint/FingerPaint/FingerPaint.csproj" /t:PackageForAndroid /p:Configuration=Debug /p:JavaSdkDirectory=$Env:JAVA_HOME
