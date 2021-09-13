@@ -30,7 +30,7 @@ jobs:
       
     - name: get dirs
       run: |-
-        echo "${JAVA_HOME}"
+        echo $env:JAVA_HOME
         
     - name: Uses MsBuild
       if: ${{ RUNNER.OS == 'Windows' }}
@@ -46,6 +46,12 @@ jobs:
         distribution: 'temurin'
         java-version: '8'
         architecture: x64
+        
+    - name: Set env
+      if: RUNNER.OS == 'Windows'
+      run:
+        $env:JAVA_HOME >> $GITHUB_ENV
+        
     - run: |- 
         echo $Env:JAVA_HOME
-        msbuild "XamarinAndroid/FingerPaint/FingerPaint/FingerPaint.csproj" /t:PackageForAndroid /p:Configuration=Debug /p:JavaSdkDirectory=${JAVA_HOME}
+        msbuild "XamarinAndroid/FingerPaint/FingerPaint/FingerPaint.csproj" /t:PackageForAndroid /p:Configuration=Debug /p:JavaSdkDirectory=${GITHUB_ENV}
