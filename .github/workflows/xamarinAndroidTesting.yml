@@ -56,4 +56,4 @@ jobs:
       run: |- 
         echo "${{ env.JHOME }}"
         echo $Env:JHOME
-        msbuild "XamarinAndroid/FingerPaint/FingerPaint/FingerPaint.csproj" /t:PackageForAndroid /p:Configuration=Debug /p:JavaSdkDirectory="${{ env.JHOME }}"
+        msbuild "XamarinAndroid/FingerPaint/FingerPaint/FingerPaint.csproj" /t:PackageForAndroid /p:Configuration=Debug /p:JavaSdkDirectory="${{ env.JAVA_HOME }}"
