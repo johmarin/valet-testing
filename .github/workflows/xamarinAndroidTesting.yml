@@ -31,6 +31,7 @@ jobs:
     - name: get dirs
       run: |-
         ls 'C:\Program Files\Android\jdk\'
+        ls $env.RUNNER_TOOL_CACHE 
         
     - name: Uses MsBuild
       if: ${{ RUNNER.OS == 'Windows' }}
