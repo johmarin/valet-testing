@@ -7,7 +7,7 @@ env:
 jobs:
   build:
 
-    runs-on: macos-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -50,7 +50,7 @@ jobs:
     - name: Set env
       if: RUNNER.OS == 'Windows'
       run:
-        echo "JHOME=$env:JAVA_HOME" >> $GITHUB_ENV
+        echo "JHOME=$env:JAVA_HOME" >> $env:GITHUB_ENV
         
     - name: Run build
       run: |- 
