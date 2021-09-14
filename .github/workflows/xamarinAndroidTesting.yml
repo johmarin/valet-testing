@@ -23,9 +23,6 @@ jobs:
       with:
         script: |-
           const globber = await glob.create("**/*.csproj")
-          for await (const file of globber.globGenerator()) {
-            await exec.exec(echo ${file})
-          }
           
     - name: Get result
       run: echo "${{steps.set-result.outputs.result}}"
