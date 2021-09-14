@@ -21,9 +21,6 @@ jobs:
       uses: actions/github-script@v4
       with:
         script: |-
-          const fs = require('fs').promises
-          const path = require('path')
-          const exec = require('@actions/exec')
           return: "Foo"
           
     - name: Set default Xamarin SDK versions
