@@ -21,7 +21,8 @@ jobs:
       id: set-result
       uses: actions/github-script@v4
       with:
-        script: return "Hello!"
+        script: |-
+          return "Hello!"
         result-encoding: string
           
     - name: Get result
