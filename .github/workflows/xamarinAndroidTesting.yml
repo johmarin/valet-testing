@@ -16,9 +16,16 @@ jobs:
       run: |- 
         echo "Runner OS - $ENV:RUNNER_OS"
         echo "Run Id - $ENV:GITHUB_RUN_ID"
-        shopt -s globstar
-        for i in  **/*.csproj; do echo $i; done
         
+    - name: script Test
+      uses: actions/github-script@v4
+      with:
+        script: |-
+          const fs = require('fs').promises
+          const path = require('path')
+          const exec = require('@actions/exec')
+          return: "Foo"
+          
     - name: Set default Xamarin SDK versions
       if: RUNNER.OS == 'macOS'
       run: |-
