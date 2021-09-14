@@ -16,6 +16,7 @@ jobs:
       run: |- 
         echo "Runner OS - $ENV:RUNNER_OS"
         echo "Run Id - $ENV:GITHUB_RUN_ID"
+        for i in ./**/*.csproj; do echo $i; done
         
     - name: Set default Xamarin SDK versions
       if: RUNNER.OS == 'macOS'
