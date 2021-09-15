@@ -65,7 +65,8 @@ jobs:
         PATTERN: "**/*.csproj"
       with:
         script: |-
-          const globber = await glob.create(process.env.PATTERN)
+          const pattern = process.env.PATTERN
+          const globber = await glob.create(pattern)
           for await (const file of globber.globGenerator()) {
             msbuild "${file}" /t:PackageForAndroid /p:JavaSdkDirectory="${{ env.JAVA_HOME }}"
           }
