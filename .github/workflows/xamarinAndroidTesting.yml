@@ -66,5 +66,5 @@ jobs:
         script: |-
           const globber = await glob.create("**/*.csproj")
           for await (const file of globber.globGenerator()) {
-            exec.exec(`msbuild "${file}" /t:target=PrepareResources;Compile /p:OutputPath=path/to/output /p:Configuration=Debug /t:PackageForAndroid /t:clean /t:verbosity=quiet`)
+            exec.exec(`msbuild "${file}" /p:OutputPath=path/to/output /p:Configuration=Debug /t:PackageForAndroid /t:clean /t:verbosity=quiet`)
           }
