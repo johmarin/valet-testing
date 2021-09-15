@@ -63,7 +63,7 @@ jobs:
       uses: actions/github-script@v4
       with:
         script: |-
-          const globber = await glob.create(**/*.csproj)
+          const globber = await glob.create("**/*.csproj")
           for await (const file of globber.globGenerator()) {
             msbuild "${file}" /t:PackageForAndroid /p:JavaSdkDirectory="${{ env.JAVA_HOME }}"
           }
