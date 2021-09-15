@@ -31,7 +31,7 @@ jobs:
       run: echo "${{steps.set-result.outputs.result}}"
           
     - name: Set default Xamarin SDK versions
-      if: RUNNER.OS == 'macOS'
+      if: RUNNER.OS == 'macOS(disabled)'
       run: |-
         $VM_ASSETS/select-xamarin-sdk-v2.sh --mono=6.4 --android=10.2
         cat $VM_ASSETS/select-xamarin-sdk-v2.sh
