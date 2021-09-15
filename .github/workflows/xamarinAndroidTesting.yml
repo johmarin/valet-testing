@@ -39,6 +39,7 @@ jobs:
         echo 'Library/Java...'; ls '/Library/Java/'
         echo 'Library/Frameworks...'; ls '/Library/Frameworks/'
         echo 'Users/runner/hostedtoolcache/'; ls '/Users/runner/hostedtoolcache/'
+        echo '/Library/Frameworks/Mono.framework/Versions/6.12.0/lib/mono/msbuild/...'; ls '/Library/Frameworks/Mono.framework/Versions/6.12.0/lib/mono/msbuild/'
         msbuild -ver
       
     - name: get dirs
