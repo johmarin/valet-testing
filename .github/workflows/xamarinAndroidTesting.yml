@@ -25,10 +25,6 @@ jobs:
         distribution: zulu
         java-version: '1.8'
     - name: Build Xamarin Project
-      uses: actions/github-script@v4
-      with:
-        script: |-
-          const globber = await glob.create("**/*.csproj")
-          for await (const file of globber.globGenerator()) {
-            exec.exec(`msbuild "${file}" /p:Configuration=Debug /t:PackageForAndroid /t:clean /p:verbosity=quiet /p:JavaSdkDirectory="${{ env.JAVA_HOME }}"`)
-          }
+      run: msbuild ${{ env.PROJECT_PATH }} /p:Configuration=Debug /t:PackageForAndroid /t:clean /p:verbosity=quiet /p:JavaSdkDirectory="${{ env.JAVA_HOME }}"
+      env:
+        PROJECT_PATH: XamarinAndroid\FingerPaint\FingerPaint\FingerPaint.csproj
