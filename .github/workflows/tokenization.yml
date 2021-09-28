@@ -16,9 +16,9 @@ jobs:
       run: cat 'tokenization/folder1/folder2/fileWithToken.txt'
     - uses: cschleiden/replace-tokens@v1
       with:
-        tokenPrefix: '{'
-        tokenSuffix: '}'
-        files: 'tokenization/*1/folder*/**/**/fileWithToken.txt'
+        tokenPrefix: __
+        tokenSuffix: __
+        files: 'tokenization/*1/folder*/**/**/fileWithToken*.txt'
       env:
         TOKEN1: "New Value"
     - name: Print file post-tokenization
