@@ -20,7 +20,8 @@ jobs:
         tokenSuffix: "}"
         files: '["tokenization/folder1/folder2/fileWithToken.txt","tokenization/folder1/folder2/fileWithToken2.txt"]'
       env:
-        TOKEN1: "New Value"
+        TOKEN1: "Value 1"
+        TOKEN2: "Value 2"
     - name: Print file post-tokenization
       run: cat 'tokenization/folder1/folder2/fileWithToken.txt'
    
