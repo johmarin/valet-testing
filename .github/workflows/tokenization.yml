@@ -18,7 +18,7 @@ jobs:
       with:
         tokenPrefix: __
         tokenSuffix: __
-        files: '["tokenization/*1/folder*/**/**/fileWithToken1.txt","tokenization/*1/folder*/**/**/fileWithToken2.txt"]'
+        files: '["tokenization/folder1/folder2/fileWithToken.txt","tokenization/folder1/folder2/fileWithToken2.txt"]'
       env:
         TOKEN1: "New Value"
     - name: Print file post-tokenization
