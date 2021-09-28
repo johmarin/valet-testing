@@ -7,18 +7,18 @@ env:
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: macos-latest
 
     steps:
     - uses: actions/checkout@v2
         
     - name: Print file pre-tokenization
-      run: cat 'tokenization\folder1\folder2\fileWithToken.txt'
+      run: cat 'tokenization/folder1/folder2/fileWithToken.txt'
     - uses: cschleiden/replace-tokens@v1
       with:
         tokenPrefix: '{'
         tokenSuffix: '}'
-        files: 'tokenization/folder1/folder2/**/**/fileWithToken.txt'
+        files: 'tokenization/*1/folder*/**/**/fileWithToken.txt'
       env:
         TOKEN1: "New Value"
     - name: Print file post-tokenization
