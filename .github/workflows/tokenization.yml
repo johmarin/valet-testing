@@ -21,5 +21,6 @@ jobs:
         files: 'tokenization/folder1/folder2/fileWithToken.txt'
       env:
         TOKEN1: "New Value"
-      
+    - name: Print file post-tokenization
+      run: cat 'tokenization\folder1\folder2\fileWithToken.txt'
    
