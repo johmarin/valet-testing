@@ -12,10 +12,10 @@ jobs:
     steps:
     - uses: cschleiden/replace-tokens@v1
       with:
-        tokenPrefix: '__'
-        tokenSuffix: '__'
+        tokenPrefix: '{'
+        tokenSuffix: '}'
         files: '["**/*.txt"]'
       env:
-        TOKEN: "New Value"
+        TOKEN1: "New Value"
       
    
