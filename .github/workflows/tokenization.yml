@@ -1,0 +1,21 @@
+name: XamarinAndroidTesting
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+env:
+  SYSTEM.DEBUG: 'false'
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: cschleiden/replace-tokens@v1
+      with:
+        tokenPrefix: __
+        tokenSuffix: __
+        files: '["tokenization/*/fileWithToken.txt"]'
+      env:
+        TOKEN: "New Value"
+      
+   
