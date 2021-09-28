@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: Build Xamarin Project
-      run: echo 'tokenization/folder1/folder2/fileWithToken.txt'
+      run: cat 'tokenization/folder1/folder2/fileWithToken.txt'
     - uses: cschleiden/replace-tokens@v1
       with:
         tokenPrefix: '{'
