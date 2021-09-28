@@ -14,7 +14,7 @@ jobs:
       with:
         tokenPrefix: '{'
         tokenSuffix: '}'
-        files: '["**/*.txt"]'
+        files: 'tokenization/folder1/folder2/fileWithToken.txt'
       env:
         TOKEN1: "New Value"
       
