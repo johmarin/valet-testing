@@ -10,7 +10,7 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: Build Xamarin Project
+    - name: Print file pre-tokenization
       run: cat 'tokenization\folder1\folder2\fileWithToken.txt'
     - uses: cschleiden/replace-tokens@v1
       with:
