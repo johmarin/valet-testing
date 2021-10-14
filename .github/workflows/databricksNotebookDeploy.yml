@@ -18,7 +18,9 @@ jobs:
     - name: Delete workspace
       run: |-
         databricks configure -h
-        databricks configure -f ${{ secrets.DATABRICKS_TOKEN }}
+        databricks configure -t
+        "https://westus2.azuredatabricks.net"
+        ${{ secrets.DATABRICKS_TOKEN }}
     
     - name: databricks-import-directory
       uses: microsoft/databricks-import-notebook@v1.0.0
