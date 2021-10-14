@@ -20,7 +20,6 @@ jobs:
         databricks configure -h
         databricks configure -t
         https://westus2.azuredatabricks.net
-        ${{ secrets.DATABRICKS_TOKEN }}
     
     - name: databricks-import-directory
       uses: microsoft/databricks-import-notebook@v1.0.0
