@@ -1,0 +1,22 @@
+name: databricksNotebookDeploy
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+env:
+  SYSTEM.DEBUG: 'false'
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+        
+    - name: Databricks Notebooks deployment
+      uses: microsoft/databricks-import-directory@v1.0.0
+      with:
+        databricks-host: https://westus2.azuredatabricks.net
+        databricks-token: "${{ secrets.DATABRICKS_TOKEN }}"
+        local-path: Databricks/Notebooks
+        remote-path: "/Shared/UploadedNotebooks"
+   
