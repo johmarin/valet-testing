@@ -17,8 +17,7 @@ jobs:
     
     - name: Delete workspace
       run: |-
-        databricks configure -h
-        echo "https://westus2.azuredatabricks.net" "\nfoo" | databricks configure -t
+        [DEFAULT] > ${{env.DATABRICKS_CONFIG_FILE}}
     
     - name: databricks-import-directory
       uses: microsoft/databricks-import-notebook@v1.0.0
