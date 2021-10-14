@@ -18,7 +18,7 @@ jobs:
     - name: Delete workspace
       run: |-
         databricks configure -h
-        databricks configure -t | bash /dev/stdin
+        databricks configure -t | bash /dev/stdin "https://westus2.azuredatabricks.net"
     
     - name: databricks-import-directory
       uses: microsoft/databricks-import-notebook@v1.0.0
