@@ -17,6 +17,7 @@ jobs:
     
     - name: Delete workspace
       run: |-
+        echo $DATABRICKS_CONFIG_FILE
         "[DEFAULT]" > $DATABRICKS_CONFIG_FILE
     
     - name: databricks-import-directory
