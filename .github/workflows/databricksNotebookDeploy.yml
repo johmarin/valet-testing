@@ -19,7 +19,7 @@ jobs:
       run: |-
         databricks configure -h
         databricks configure -t
-        "https://westus2.azuredatabricks.net"
+        https://westus2.azuredatabricks.net
         ${{ secrets.DATABRICKS_TOKEN }}
     
     - name: databricks-import-directory
