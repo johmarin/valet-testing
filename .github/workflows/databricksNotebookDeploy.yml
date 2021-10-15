@@ -23,7 +23,7 @@ jobs:
         databricks configure --host "https://westus2.azuredatabricks.net" --token-file $file
         rm -f $file
         databricks workspace ls
-        databricks workspace delete --recursive "/Shared"
+        databricks workspace delete --recursive "/Shared/"
         databricks workspace ls
     
     - name: databricks-import-directory
