@@ -24,6 +24,8 @@ jobs:
         "host = https://westus2.azuredatabricks.net" >> $file
         "token = ${{ secrets.DATABRICKS_TOKEN }}" >> $file
         cat $file
+        databricks configure --token-file $file
+        databricks workspace ls
     
     - name: databricks-import-directory
       uses: microsoft/databricks-import-notebook@v1.0.0
