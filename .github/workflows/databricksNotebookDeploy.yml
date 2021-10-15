@@ -16,8 +16,9 @@ jobs:
       uses: microsoft/install-databricks-cli@v1.0.0
     
     - name: Delete workspace
+      shell: pwsh
       run: |-
-        $file = $runner.temp + "/tokenfile.txt"
+        $file = "${{ runner.temp }}/tokenfile.txt"
         echo $file
         "[DEFAULT]" > $file
     
