@@ -16,16 +16,13 @@ jobs:
       uses: microsoft/install-databricks-cli@v1.0.0
     
     - name: Delete workspace
-      continue-on-error: true
       shell: pwsh
       run: |-
         $file = "${{ runner.temp }}/tokenfile.txt"
         echo ${{ secrets.DATABRICKS_TOKEN }} > $file
         databricks configure --host "https://westus2.azuredatabricks.net" --token-file $file
         rm -f $file
-        databricks workspace ls "/Shared/UploadedNotebooks"
-        databricks workspace delete --recursive "/Shared/UploadedNotebooks"
-        databricks workspace ls "/Shared/UploadedNotebooks"
+        databricks workspace delete --recursive "/Shared"
     
     - name: databricks-import-directory
       uses: microsoft/databricks-import-notebook@v1.0.0
