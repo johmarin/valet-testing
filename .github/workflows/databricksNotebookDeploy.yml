@@ -17,8 +17,9 @@ jobs:
     
     - name: Delete workspace
       run: |-
-        echo $runner.temp
-        "[DEFAULT]" > $runner.temp + "/tokenfile.txt"
+        $file = $runner.temp + "/tokenfile.txt"
+        echo $file
+        "[DEFAULT]" > $file
     
     - name: databricks-import-directory
       uses: microsoft/databricks-import-notebook@v1.0.0
