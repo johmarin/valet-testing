@@ -21,6 +21,9 @@ jobs:
         $file = "${{ runner.temp }}/tokenfile.txt"
         echo $file
         "[DEFAULT]" > $file
+        "host = https://westus2.azuredatabricks.net" >> $file
+        "token = ${{ secrets.DATABRICKS_TOKEN }}" >> $file
+        cat $file
     
     - name: databricks-import-directory
       uses: microsoft/databricks-import-notebook@v1.0.0
