@@ -24,7 +24,7 @@ jobs:
         databricks configure --host "https://westus2.azuredatabricks.net" --token-file $file
         rm -f $file
         databricks workspace ls /Shared/UploadedNotebooks
-        databricks delete --recursive /Shared/UploadedNotebooks
+        databricks workspace delete --recursive /Shared/UploadedNotebooks
         databricks workspace ls /Shared/UploadedNotebooks
     
     - name: databricks-import-directory
