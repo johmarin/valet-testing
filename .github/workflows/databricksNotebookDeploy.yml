@@ -18,7 +18,7 @@ jobs:
       shell: pwsh
       run: |-
         $tokenFile = "${{ runner.temp }}/tokenfile.txt"
-        echo ${{ secrets.DATABRICKS_TOKEN }} > $file
+        echo ${{ secrets.DATABRICKS_TOKEN }} > $tokenFile
         databricks configure --host "https://westus2.azuredatabricks.net" --token-file $tokenFile
         rm -f $tokenFile
         databricks workspace delete --recursive "/Shared/UploadedNotebooks"
