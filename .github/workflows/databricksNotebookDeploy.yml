@@ -13,12 +13,12 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install Databricks CLI
       uses: microsoft/install-databricks-cli@v1.0.0
-    - name: Clean
+    - name: Clean Databricks Path
       continue-on-error: true
       shell: pwsh
       run: |-
         $tokenFile = "${{ runner.temp }}/tokenfile.txt"
-        echo ${{ secrets.DATABRICKS_TOKEN }} > $tokenFile
+        echo ${{ secrets.DATABRICKS_TOKEN }} > $file
         databricks configure --host "https://westus2.azuredatabricks.net" --token-file $tokenFile
         rm -f $tokenFile
         databricks workspace delete --recursive "/Shared/UploadedNotebooks"
