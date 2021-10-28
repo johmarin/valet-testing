@@ -1,0 +1,22 @@
+
+name: serviceFabricDeploy
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+env:
+  SYSTEM.DEBUG: 'false'
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: ServiceFabric
+      continue-on-error: true
+      shell: pwsh
+      run: |-
+        $clusterConnectionParameters = @{}
+        $clusterConnectionParameters["ServerCertThumbprint"] = "cert val"
+        $connectedServiceEndpoint = "tcp://jmvalettest.westus2.cloudapp.azure.com:19000"
+        Connect-ServiceFabricClusterFromServiceEndpoint -ClusterConnectionParameters $clusterConnectionParameters -ConnectedServiceEndpoint $connectedServiceEndpoint
