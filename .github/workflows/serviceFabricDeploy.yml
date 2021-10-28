@@ -19,4 +19,4 @@ jobs:
         $clusterConnectionParameters = @{}
         $clusterConnectionParameters["ServerCertThumbprint"] = "cert val"
         $connectedServiceEndpoint = "tcp://jmvalettest.westus2.cloudapp.azure.com:19000"
-        Connect-ServiceFabricClusterFromServiceEndpoint -ClusterConnectionParameters $clusterConnectionParameters -ConnectedServiceEndpoint $connectedServiceEndpoint
+        Connect-ServiceFabricCluster
